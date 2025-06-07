@@ -25,7 +25,7 @@ export const TasksOnBoard = ({ boardId }: Props) => {
                     <p>
                         <strong>Исполнитель:</strong>
                         {' '}
-                        {task.executorName}
+                        {task.assignee?.fullName}
                     </p>
                 </div>
             ))}

@@ -1,6 +1,7 @@
 import type { RouteObject } from 'react-router-dom';
-import { BoardsPage } from '@/pages/boards';
-import { BoardTasksPage } from '@/pages/board-tasks';
+import { IssuesPage } from '@/pages/IssuesPage';
+import { BoardsPage } from '@/pages/BoardsPage';
+import { BoardTasksPage } from '@/pages/BoardTasksPage';
 
 export const routes: RouteObject[] = [
     {
@@ -14,5 +15,9 @@ export const routes: RouteObject[] = [
     {
         path: '/boards/:id',
         element: <BoardTasksPage />,
+    },
+    {
+        path: '/tasks',
+        element: <IssuesPage />,
     },
 ];

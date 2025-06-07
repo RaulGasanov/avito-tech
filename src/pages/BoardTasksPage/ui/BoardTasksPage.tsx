@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { TasksOnBoard } from '@/widgets/tasks-on-board';
 
-export const BoardTasksPage = () => {
+const BoardTasksPage = () => {
     const { id } = useParams<{ id: string }>();
     const boardId = Number(id);
 
@@ -17,3 +17,5 @@ export const BoardTasksPage = () => {
         </div>
     );
 };
+
+export default BoardTasksPage;

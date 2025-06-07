@@ -8,7 +8,9 @@ export const App = () => (
     <ReactQueryProvider>
         <BrowserRouter>
             <Header />
-            <AppRouter />
+            <main>
+                <AppRouter />
+            </main>
             <TaskFormModal />
         </BrowserRouter>
     </ReactQueryProvider>
