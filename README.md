@@ -1,54 +1,86 @@
-# React + TypeScript + Vite
+# 🧩 Avito Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Vite + React проект, контейнеризованный с помощью Docker. Использует современные технологии для удобной разработки и стабильного продакшена.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Как запустить
 
-## Expanding the ESLint configuration
+### 🔧 1. Клонируйте репозиторий
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/your-username/avito-frontend.git
+cd avito-frontend
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 🐳 2. Соберите и запустите проект с Docker
 
-```js
-// .eslintrc.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Вариант A: через Docker CLI
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+docker build -t avito-frontend .
+docker run -d -p 8080:80 avito-frontend
 ```
+
+Перейдите в браузере на: [http://localhost:8080](http://localhost:8080)
+
+#### Вариант B: через `docker-compose`
+
+```bash
+docker-compose up --build
+```
+
+---
+
+## 🧰 Стек технологий
+
+| Инструмент              | Назначение                          |
+|------------------------|-------------------------------------|
+| Vite                   | Быстрый сборщик проекта             |
+| React 19               | UI-фреймворк                        |
+| Redux Toolkit          | Глобальное состояние                |
+| React Query            | Асинхронные данные и кэш            |
+| TypeScript             | Статическая типизация               |
+| SCSS + Stylelint       | Работа со стилями                   |
+| ESLint + Airbnb config | Качественный и единый кодстайл      |
+| Jest + Testing Library | Юнит-тесты компонентов              |
+| Docker                 | Контейнеризация и деплой            |
+
+---
+
+## 💡 Почему эти технологии?
+
+- **Vite** — мгновенная перезагрузка, удобство разработки, минимальная конфигурация.
+- **React 19** — последняя версия с улучшенной производительностью и новым API.
+- **Redux Toolkit** — официальный способ использовать Redux без шаблонного кода.
+- **React Query** — кэширование и управление асинхронными запросами без боли.
+- **Docker** — стабильная сборка и запуск независимо от локального окружения.
+
+---
+
+## 🧪 Скрипты
+
+| Скрипт               | Назначение                        |
+|----------------------|-----------------------------------|
+| `npm run dev`        | Dev-сервер на `localhost:7068`    |
+| `npm run build`      | Production-сборка                 |
+| `npm run preview`    | Предпросмотр собранного проекта   |
+| `npm run test`       | Запуск тестов                     |
+| `npm run lint:ts`    | Проверка TypeScript-кода          |
+| `npm run lint:scss`  | Проверка SCSS-стилей              |
+
+---
+
+## 📦 Production-сборка (если без Docker)
+
+```bash
+npm install
+npm run build
+npx serve dist
+```
+
+---
+
+## 📝 Лицензия
+
+Этот проект распространяется под лицензией MIT.
