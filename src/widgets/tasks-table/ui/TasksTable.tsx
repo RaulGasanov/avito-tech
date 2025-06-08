@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useAllTasks } from '@/entities/task/model/getAllTasks';
 import { openForm } from '@/features/task-form/model/taskFormSlice';
 import { normalizeStatus } from '@/widgets/tasks-table/lib/normalizeStatus.ts';
+import styles from './TasksTable.module.scss';
 
 export const TasksTable = () => {
     const { data: tasks = [], isLoading } = useAllTasks();
@@ -35,8 +36,8 @@ export const TasksTable = () => {
     };
 
     return (
-        <div>
-            <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
+        <div className={styles.TasksTable}>
+            <div className={styles.filters}>
                 <input placeholder="Поиск по названию" value={search} onChange={(e) => setSearch(e.target.value)} />
                 <input placeholder="Исполнитель (ID)" value={assigneeId} onChange={(e) => setAssigneeId(e.target.value)} />
                 <select value={status} onChange={(e) => setStatus(e.target.value)}>
@@ -55,16 +56,11 @@ export const TasksTable = () => {
             {isLoading ? (
                 <p>Загрузка...</p>
             ) : (
-                <ul style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                <ul className={styles.taskList}>
                     {filtered.map((task) => (
                         <li
                             key={task.id}
-                            style={{
-                                border: '1px solid #ddd',
-                                borderRadius: 8,
-                                padding: 12,
-                                cursor: 'pointer',
-                            }}
+                            className={styles.taskItem}
                             onClick={() => handleClick(task)}
                         >
                             <strong>{task.title}</strong>

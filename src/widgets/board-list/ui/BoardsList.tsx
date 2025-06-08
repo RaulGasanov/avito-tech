@@ -16,7 +16,6 @@ export const BoardsList = () => {
                     key={board.id}
                     className={styles.board}
                     onClick={() => navigate(`/boards/${board.id}`)}
-                    style={{ cursor: 'pointer' }}
                 >
                     <strong>{board.name}</strong>
                     {' '}

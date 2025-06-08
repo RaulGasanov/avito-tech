@@ -1,0 +1,22 @@
+.Header {
+   padding: 16px;
+   background: #f3f4f6;
+   display: flex;
+   justify-content: space-between;
+
+   .navLinks {
+      display: flex;
+      gap: 12px;
+   }
+
+   .createButton {
+      padding: 8px;
+      background: #3b82f6;
+      color: #fff;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+   }
+
+}
+
