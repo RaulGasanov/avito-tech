@@ -79,7 +79,7 @@ export const TaskFormModal = () => {
     if (!isOpen) return null;
 
     return createPortal(
-        <div className={styles.overlay} onClick={() => dispatch(closeForm())}>
+        <div className={styles.TaskFormModal} onClick={() => dispatch(closeForm())}>
             <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
                 <form onSubmit={handleSubmit}>
                     <h2>{mode === 'create' ? 'Создание задачи' : 'Редактирование задачи'}</h2>

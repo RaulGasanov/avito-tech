@@ -13,7 +13,7 @@ export const DraggableTaskCard = ({ task }: { task: any }) => {
             ref={setNodeRef}
             {...listeners}
             {...attributes}
-            className={styles.task}
+            className={styles.DraggableTaskCard}
             style={{
                 transform: transform
                     ? `translate(${transform.x}px, ${transform.y}px)`

@@ -6,7 +6,7 @@ export const BoardColumn = ({ id, tasks }: { id: string; tasks: any[] }) => {
     const { setNodeRef } = useDroppable({ id });
 
     return (
-        <div ref={setNodeRef} className={styles.column}>
+        <div ref={setNodeRef} className={styles.BoardColumn}>
             <div className={styles.columnHeader}>
                 {id === 'Backlog' && 'Backlog'}
                 {id === 'InProgress' && 'In Progress'}

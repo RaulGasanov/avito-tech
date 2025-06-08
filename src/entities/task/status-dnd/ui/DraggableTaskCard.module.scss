@@ -1,4 +1,4 @@
-.task {
+.DraggableTaskCard {
   background: #f9fafb;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
@@ -12,7 +12,7 @@
   }
 
   & + .task {
-    margin-top: 12px; // Разделение между карточками
+    margin-top: 12px;
   }
 
   strong {

@@ -8,9 +8,9 @@ export const BoardsList = () => {
 
     if (isLoading) return <div>Загрузка...</div>;
     if (isError || !data) return <div>Ошибка загрузки досок</div>;
-    console.log(data);
+
     return (
-        <div>
+        <div className={styles.BoardsList}>
             {data.map((board) => (
                 <div
                     key={board.id}

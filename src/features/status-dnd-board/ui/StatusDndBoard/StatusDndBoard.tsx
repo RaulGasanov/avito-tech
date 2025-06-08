@@ -23,7 +23,7 @@ export const StatusDndBoard = ({ boardId }: { boardId: number }) => {
 
     return (
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-            <div className={styles.board}>
+            <div className={styles.StatusDndBoard}>
                 {statuses.map((status) => (
                     <BoardColumn
                         key={status}

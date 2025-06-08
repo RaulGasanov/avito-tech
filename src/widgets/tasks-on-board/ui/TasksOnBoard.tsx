@@ -12,7 +12,7 @@ export const TasksOnBoard = ({ boardId }: Props) => {
     if (isError || !data) return <div>Ошибка загрузки задач</div>;
 
     return (
-        <div>
+        <div className={styles.TasksOnBoard}>
             {data.map((task) => (
                 <div key={task.id} className={styles.task}>
                     <h3>{task.title}</h3>
