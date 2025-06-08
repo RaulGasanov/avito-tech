@@ -62,13 +62,6 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'max-len': ['warn', { ignoreComments: true, code: 120 }],
-        'i18next/no-literal-string': [
-            'warn',
-            {
-                markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'align', 'alt'],
-            },
-        ],
         'no-console': 'off',
         'linebreak-style': 'off',
         'no-param-reassign': 'off',
@@ -85,6 +78,8 @@ module.exports = {
         'react/no-array-index-key': 'off',
         'jsx-a11y/no-noninteractive-element-to-interactive-role': 'off',
         'jsx-a11y/no-noninteractive-element-interactions': 'off',
+        'jsx-a11y/label-has-associated-control': 'off',
+        'i18next/no-literal-string': 'off',
     },
     globals: {
         __IS_DEV__: true,

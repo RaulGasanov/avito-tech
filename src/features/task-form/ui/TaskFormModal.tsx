@@ -40,10 +40,10 @@ export const TaskFormModal = () => {
             setFormData({
                 title: '',
                 description: '',
-                boardId: 0,
+                boardId: 1,
                 priority: 'Low',
                 status: 'NEW',
-                assigneeId: 0,
+                assigneeId: 1,
             });
         }
     }, [mode, initialData]);
@@ -62,15 +62,18 @@ export const TaskFormModal = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        mutation.mutate(
-            {
-                ...formData,
-                status: denormalizeStatus(formData.status),
-            },
-            {
-                onSuccess: () => dispatch(closeForm()),
-            },
-        );
+
+        const payload = {
+            ...formData,
+            status: denormalizeStatus(formData.status),
+            BoardID: formData.boardId,
+        };
+
+        delete (payload as any).boardId;
+
+        mutation.mutate(payload, {
+            onSuccess: () => dispatch(closeForm()),
+        });
     };
 
     if (!isOpen) return null;

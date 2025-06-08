@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import { TasksOnBoard } from '@/widgets/tasks-on-board';
+import { StatusDndBoard } from '@/features/status-dnd-board/ui/StatusDndBoard/StatusDndBoard.tsx';
 
 const BoardTasksPage = () => {
     const { id } = useParams<{ id: string }>();
@@ -13,7 +13,7 @@ const BoardTasksPage = () => {
                 Задачи доски #
                 {boardId}
             </h1>
-            <TasksOnBoard boardId={boardId} />
+            <StatusDndBoard boardId={boardId} />
         </div>
     );
 };
